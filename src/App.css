@@ -40,3 +40,15 @@
 .read-the-docs {
   color: #888;
 }
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 60px rgba(255, 215, 0, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+  }
+}
