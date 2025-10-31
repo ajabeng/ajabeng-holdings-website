@@ -1,73 +1,35 @@
-import './App.css'
-import logo from './assets/logo.png'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
+import Services from './pages/Services';
+import Contact from './pages/Contact';
+import './App.css';
 
 function App() {
   return (
-    <div style={{
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      height: '100vh',
-      backgroundColor: '#0b0c10',
-      textAlign: 'center',
-      fontFamily: 'Poppins, sans-serif',
-      color: '#ffffff',
-    }}>
-      <div style={{
-        background: 'radial-gradient(circle at center, rgba(255, 215, 0, 0.15), transparent 70%)',
-        borderRadius: '50%',
-        padding: '40px',
-        marginBottom: '20px',
-        animation: 'pulseGlow 3s infinite ease-in-out'
-      }}>
-        <img 
-          src={logo} 
-          alt="Ajabeng Holdings Logo" 
-          style={{
-            width: '220px',
-            borderRadius: '50%'
-          }} 
-        />
-      </div>
+    <Router>
+      <header className="navbar">
+        <h1 className="nav-logo">Ajabeng Holdings</h1>
+        <nav>
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/services">Services</Link>
+          <Link to="/contact">Contact</Link>
+        </nav>
+      </header>
 
-      <h1 style={{
-        fontSize: '3rem',
-        color: '#ffd700',
-        letterSpacing: '1px',
-        marginBottom: '10px'
-      }}>
-        Ajabeng Holdings LLC
-      </h1>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
 
-      <p style={{
-        fontSize: '1.2rem',
-        color: '#d1d1d1',
-        maxWidth: '600px',
-        lineHeight: '1.6'
-      }}>
-        Empowering Technology, Infrastructure, and Innovation.
-      </p>
-
-      <a 
-        href="mailto:info@ajabengholdings.com"
-        style={{
-          marginTop: '40px',
-          padding: '14px 40px',
-          backgroundColor: '#0056b3',
-          color: '#fff',
-          borderRadius: '10px',
-          textDecoration: 'none',
-          fontWeight: '600',
-          transition: 'all 0.3s ease'
-        }}
-        onMouseEnter={e => e.target.style.backgroundColor = '#003d82'}
-        onMouseLeave={e => e.target.style.backgroundColor = '#0056b3'}
-      >
-        Contact Us
-      </a>
-    </div>
-  )
+      <footer className="footer">
+        <p>© {new Date().getFullYear()} Ajabeng Holdings LLC — All Rights Reserved.</p>
+      </footer>
+    </Router>
+  );
 }
 
-export default App
+export default App;

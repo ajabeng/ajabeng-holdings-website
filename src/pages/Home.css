@@ -1,0 +1,44 @@
+.home {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.logo-glow {
+  width: 250px;
+  border-radius: 50%;
+  animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 20px #FFD700; }
+  to { box-shadow: 0 0 60px #FFD700; }
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-top: 30px;
+  color: #FFD700;
+}
+
+.tagline {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 15px 35px;
+  background-color: #0056b3;
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #FFD700;
+  color: #000;
+}

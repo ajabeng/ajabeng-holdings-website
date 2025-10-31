@@ -1,3 +1,4 @@
+/* === Root container styling === */
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -5,50 +6,85 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* === Background and text === */
+body {
+  background-color: #0b0c10;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
+/* === Logo glow animation === */
 @keyframes pulseGlow {
   0% {
     box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
   }
   50% {
-    box-shadow: 0 0 60px rgba(255, 215, 0, 0.8);
+    box-shadow: 0 0 60px rgba(255, 215, 0, 0.9);
   }
   100% {
     box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
   }
+}
+
+/* === Fade-in effect === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Neon button glow === */
+.neon-button {
+  display: inline-block;
+  box-shadow: 0 0 0px rgba(0, 136, 255, 0);
+  transition: all 0.4s ease;
+}
+
+.neon-button:hover {
+  box-shadow: 0 0 20px rgba(0, 136, 255, 0.8), 0 0 40px rgba(0, 136, 255, 0.4);
+  transform: scale(1.05);
+}
+body {
+  background-color: #0b0c10;
+  color: white;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+  background-color: #000;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar a {
+  color: #FFD700;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.navbar a:hover {
+  color: #fff;
+}
+
+.nav-logo {
+  color: #FFD700;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+  background-color: #000;
+  color: #FFD700;
 }
